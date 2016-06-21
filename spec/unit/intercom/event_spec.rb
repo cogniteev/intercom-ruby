@@ -23,6 +23,11 @@ describe "Intercom::Event" do
     client.events.create(:event_name => "sale of item", :email => 'joe@example.com')
   end
 
+  it "returns user events" do
+    client.expects(:get).with("/events", { :type => 'user', :user_id => '12345' }).returns(test_event_list)
+    client.events.find_all(:type => 'user', :user_id => '12345').map(&:event_name).must_equal %W(event1 event2)
+  end
+
   describe 'bulk operations' do
     let (:job) {
       {

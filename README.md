@@ -305,6 +305,8 @@ intercom.events.create(
   }
 )
 
+# Iterate over all events for a user via their user_id
+intercom.events.find_all(:user_id => '123').each {|event| puts event.body}
 
 ```
 

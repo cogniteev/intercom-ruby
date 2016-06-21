@@ -71,6 +71,33 @@ def test_admin_list
   }
 end
 
+def test_event(name="event-name")
+  {
+      "type" => "event",
+      "id" => "576156afd937-36d0-11e6-b457-4b977ddd6",
+      "created_at" => 1466417855,
+      "event_name" => name,
+      "user_id" => "12345",
+      "email" => "bob@example.com",
+      "intercom_user_id" => "531ee472cce572a6ec123415",
+      "metadata" => {
+          "meta1" => "value1",
+          "meta2" => "value2"
+      }
+  }
+end
+
+def test_event_list(events = %w(event1 event2))
+  {
+    "type" => "event.list",
+    "events" => events.map { |name| test_event name },
+    "pages" => {
+      "next" => "https://api.intercom.io/events?before=1466084456047&intercom_user_id=531ee472cce572a6ec123415&type=user",
+      "since" => "https://api.intercom.io/events?intercom_user_id=531ee472cce572a6ec123415&type=user&since=1466417855017"
+    }
+  }
+end
+
 def test_company
   {
     "type" => "company",
