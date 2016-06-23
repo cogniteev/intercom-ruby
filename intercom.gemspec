@@ -4,7 +4,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "intercom/version"
 
 Gem::Specification.new do |spec|
-  spec.name        = "intercom"
+  spec.name        = "cogniteev-intercom"
   spec.version     = Intercom::VERSION
   spec.authors     = ["Ben McRedmond", "Ciaran Lee", "Darragh Curran", "Jeff Gardner", "Kyle Daigle", "Declan McGrath", "Jamie Osler", "Bob Long"]
   spec.email       = ["ben@intercom.io", "ciaran@intercom.io", "darragh@intercom.io", "jeff@intercom.io", "kyle@digitalworkbox.com", "declan@intercom.io", "jamie@intercom.io", "bob@intercom.io"]
@@ -12,7 +12,6 @@ Gem::Specification.new do |spec|
   spec.summary     = %q{Ruby bindings for the Intercom API}
   spec.description = %Q{Intercom (https://www.intercom.io) is a customer relationship management and messaging tool for web app owners. This library wraps the api provided by Intercom. See http://docs.intercom.io/api for more details. }
   spec.license     = "MIT"
-  spec.rubyforge_project = "intercom"
 
   spec.files         = `git ls-files`.split("\n")
   spec.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
